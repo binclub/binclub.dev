@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- HTML Meta Tags -->
+	<title>Binscure</title>
+	<meta name="description" content="Binscure is an obfuscator that protects your java applications from decompilation">
+	<meta name="keywords" content="binclub binscure bingait obfuscate obfuscator java deobfuscator disassembler jvm kotlin security drm decompilation bytecode">
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=auto">
+	
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="Binscure">
+	<meta itemprop="description" content="Binscure is an Java Bytecode obfuscator that protects your applications from decompilation">
+	<meta itemprop="image" content="http://binclub.dev/resources/icon.webp">
+	
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://binclub.dev/binscure">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Binscure">
+	<meta property="og:description" content="Binscure is an Java Bytecode obfuscator that protects your applications from decompilation">
+	<meta property="og:image" content="http://binclub.dev/resources/icon.webp">
+	
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Binscure">
+	<meta name="twitter:description" content="Binscure is an Java Bytecode obfuscator that protects your applications from decompilation">
+	<meta name="twitter:image" content="http://binclub.dev/resources/icon.webp">
+	
+	<link href="https://binclub.dev/binscure" rel="canonical">
+	<link href="/resources/icon.webp" rel="shortcut icon" type="image/x-icon">
+	<link href="/style/shared.css" rel="stylesheet" type="text/css">
+	<link href="/style/products.css" rel="stylesheet" type="text/css">
+	<link href="/style/binscure.css" rel="stylesheet" type="text/css">
+	<link href="/style/modal.css" rel="stylesheet" type="text/css">
+	<link href="/resources/prism.css" rel="stylesheet">
+</head>
+<body>
+<div id="main">
+	<div id="header">
+		<nav>
+			<picture>
+				<source srcset="/resources/Binclub_2_75.webp" type="image/webp">
+				<source srcset="/resources/Binclub_2_75.png" type="image/png">
+				<img src="/resources/Binclub_2_75.png" alt="padlock" onclick="goto('/')" style="cursor: pointer">
+			</picture>
+			<ul>
+				<li><a href="/binscure">Binscure</a></li>
+				<li><a href="/bingait">Bingait</a></li>
+				<li><a href="https://blog.binclub.dev" target="_blank">Blog</a></li>
+				<li><a href="/discord/" target="_blank">Discord</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="content">
+		<div id="content-header">
+			<div>
+				<h1>
+					BINSCURE
+				</h1>
+				<small>A commercial Java obfuscator</small>
+			</div>
+			<div>
+				<button id="purchase-btn" class="modal-open" modal="0">PURCHASE</button>
+			</div>
+		</div>
+		<div id="features">
+			<fieldset>
+				<legend>Secure</legend>
+				<p>
+					Binscure protects your java applications from reverse engineering, decompilation, and pirating.
+					We use advanced and unique techniques to hinder attackers attempting to reverse your application such as
+					cryptographic string encryption, control flow obfuscation and constant value obfuscation.
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Easy to use</legend>
+				<p>
+					Binscure is easy to use. Simply run it passing the configuration file as an argument and it will produce
+					an output jar in no time. Its configuration file allows scripting like behaviour allowing you to suit your
+					exact development environment.
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Peace of Mind</legend>
+				<p>
+					Obfuscating your program with Binscure gives you peace of mind: You can spend your time making a great
+					product, we will handle the security.
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Fast</legend>
+				<p>
+					Binscure is fast to setup, fast to run. Binscure requires you to provide minimal runtime libraries,
+					and the configuration format is fully documented with examples at
+					<a href="https://github.com/binclub/BinscureDocumentation" target="_blank">github.com/binclub/BinscureDocumentation</a>.
+				</p>
+			</fieldset>
+		</div>
+		<div class="carousel-container">
+			See below how different reverse engineering tools react to a Binscure obfuscated program:
+			<carousel>
+				<div class="carousel-btns">
+					<button class="active">Original</button>
+					<button>ASM (Recaf, JDA, JByteMod, Java Deobfuscator...)</button>
+					<button>Luyten/Procyon</button>
+					<button>Fernflower</button>
+					<button>Krakatau</button>
+					<button>CFR</button>
+					<button>JD-GUI</button>
+					<button>Apache BCEL</button>
+				</div>
+				<div class="carousel-items">
+					<!-- Original -->
+					<pre class="active"><code class="language-java">public class FizzBuzz
+{
+	public FizzBuzz() {
+		super();
+	}
+	
+	public static void main(final String[] array) {
+		for (int i = 1; i <= 100; ++i) {
+			if (i % 15 == 0) {
+				System.out.println("FizzBuzz");
+			}
+			else if (i % 3 == 0) {
+				System.out.println("Fizz");
+			}
+			else if (i % 5 == 0) {
+				System.out.println("Buzz");
+			}
+			else {
+				System.out.println(String.valueOf(i));
+			}
+		}
+	}
+}</code></pre>
+					<!-- ASM (Recaf, JDA, JByteMod, Java Deobfuscator...) -->
+					<pre><code class="language-javastacktrace">java.lang.ArrayIndexOutOfBoundsException: 5461
+	at org.objectweb.asm.ClassReader.readUnsignedShort(ClassReader.java:3363)
+	at org.objectweb.asm.ClassReader.readStringish(ClassReader.java:3493)
+	at org.objectweb.asm.ClassReader.readClass(ClassReader.java:3508)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:488)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:400)</code></pre>
+					<!-- Luyten/Procyon -->
+					<pre><code class="language-javastacktrace">java.lang.IllegalStateException: Invalid BootstrapMethods attribute entry: -2 additional arguments required for method ., but only 0 specified.
+	at com.strobel.assembler.ir.Error.invalidBootstrapMethodEntry(Error.java:244)
+	at com.strobel.assembler.ir.MetadataReader.readAttributeCore(MetadataReader.java:267)
+	at com.strobel.assembler.metadata.ClassFileReader.readAttributeCore(ClassFileReader.java:261)
+	at com.strobel.assembler.ir.MetadataReader.inflateAttributes(MetadataReader.java:426)
+	at com.strobel.assembler.metadata.ClassFileReader.visitAttributes(ClassFileReader.java:1134)
+	at com.strobel.assembler.metadata.ClassFileReader.readClass(ClassFileReader.java:439)
+	at com.strobel.assembler.metadata.ClassFileReader.readClass(ClassFileReader.java:377)
+	at com.strobel.assembler.metadata.MetadataSystem.resolveType(MetadataSystem.java:129)
+	at com.strobel.assembler.metadata.MetadataSystem.lookupTypeCore(MetadataSystem.java:86)
+	at com.strobel.assembler.metadata.MetadataResolver.lookupType(MetadataResolver.java:46)
+	at us.deathmarine.luyten.Model.openEntryByTreePath(Model.java:338)
+	at us.deathmarine.luyten.Model$TreeListener$1.run(Model.java:266)</code></pre>
+					<!-- Fernflower -->
+					<pre><code class="language-javastacktrace">ERROR: Corrupted class file: .\0.class
+java.io.EOFException
+        at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:340)
+        at org.jetbrains.java.decompiler.struct.attr.StructExceptionsAttribute.initContent(StructExceptionsAttribute.java:22)
+        at org.jetbrains.java.decompiler.struct.StructMember.readAttribute(StructMember.java:79)
+        at org.jetbrains.java.decompiler.struct.StructMember.readAttributes(StructMember.java:50)
+        at org.jetbrains.java.decompiler.struct.StructClass.&#x3C;init&#x3E;(StructClass.java:97)
+        at org.jetbrains.java.decompiler.struct.StructContext.addSpace(StructContext.java:109)
+        at org.jetbrains.java.decompiler.struct.StructContext.addSpace(StructContext.java:64)
+        at org.jetbrains.java.decompiler.main.Fernflower.addSource(Fernflower.java:73)
+        at org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler.addSource(ConsoleDecompiler.java:111)
+        at org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler.main(ConsoleDecompiler.java:79)</code></pre>
+					<!-- Krakatau -->
+					<pre><code class="language-none">Attempting to automatically locate the standard library...
+Found at  C:\Program Files\Java\jdk1.8.0_241\jre\lib\rt.jar
+processing target 0, 1 remaining
+Loading 0
+Loading give up
+failed to open .\give up.class
+Traceback (most recent call last):
+  File ".\decompile.py", line 158, in &#x3C;module&#x3E;
+    decompileClass(path, targets, args.out, args.skip, magic_throw=args.xmagicthrow)
+  File ".\decompile.py", line 103, in decompileClass
+    source = printer.visit(javaclass.generateAST(c, makeGraphCB, skip_errors, add_throws=add_throws))
+  File "D:\Computing\obfuscator\testing\obftest\Krakatau-master\Krakatau-master\Krakatau\java\javaclass.py", line 67, in generateAST
+    method_defs = [_getMethod(m, cb, forbidden_identifiers, skip_errors) for m in methods]
+  File "D:\Computing\obfuscator\testing\obftest\Krakatau-master\Krakatau-master\Krakatau\java\javaclass.py", line 37, in _getMethod
+    graph = cb(method) if method.code is not None else None
+  File ".\decompile.py", line 48, in makeGraph
+    v = verifyBytecode(m.code)
+  File "D:\Computing\obfuscator\testing\obftest\Krakatau-master\Krakatau-master\Krakatau\verifier\inference_verifier.py", line 477, in verifyBytecode
+    iNodes = [InstructionNode(code, offset_rmap, offsets, key) for key in offsets[:-1]]
+  File "D:\Computing\obfuscator\testing\obftest\Krakatau-master\Krakatau-master\Krakatau\verifier\inference_verifier.py", line 299, in __init__
+    self._precomputeValues()
+  File "D:\Computing\obfuscator\testing\obftest\Krakatau-master\Krakatau-master\Krakatau\verifier\inference_verifier.py", line 318, in _precomputeValues
+    result = self._removeInterface(result)
+  File "D:\Computing\obfuscator\testing\obftest\Krakatau-master\Krakatau-master\Krakatau\verifier\inference_verifier.py", line 302, in _removeInterface
+    if vt.tag == '.obj' and vt.extra is not None and self.env.isInterface(vt.extra, forceCheck=True):
+  File "D:\Computing\obfuscator\testing\obftest\Krakatau-master\Krakatau-master\Krakatau\environment.py", line 56, in isInterface
+    raise e
+Krakatau.error.ClassLoaderError:
+ClassNotFoundException: give up</code></pre>
+					<!-- CFR -->
+					<pre><code class="language-java">/*
+ * Decompiled with CFR 0.149.
+ */
+public class 0 {
+    /*
+     * Exception decompiling
+     */
+    public static void main(String[] var0) {
+        /*
+         * This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file.
+         * java.lang.IllegalStateException: Dynamic invoke arg count mismatch 0(+3) vs 1
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeBootstrapArgs(Op02WithProcessedDataAndRefs.java:637)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeDynamic(Op02WithProcessedDataAndRefs.java:408)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeDynamic(Op02WithProcessedDataAndRefs.java:389)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.createStatement(Op02WithProcessedDataAndRefs.java:1221)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.access$100(Op02WithProcessedDataAndRefs.java:56)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs$11.call(Op02WithProcessedDataAndRefs.java:2068)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs$11.call(Op02WithProcessedDataAndRefs.java:2065)
+         * org.benf.cfr.reader.util.graph.AbstractGraphVisitorFI.process(AbstractGraphVisitorFI.java:60)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.convertToOp03List(Op02WithProcessedDataAndRefs.java:2077)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisInner(CodeAnalyser.java:425)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisOrWrapFail(CodeAnalyser.java:251)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysis(CodeAnalyser.java:185)
+         * org.benf.cfr.reader.entities.attributes.AttributeCode.analyse(AttributeCode.java:94)
+         * org.benf.cfr.reader.entities.Method.analyse(Method.java:463)
+         * org.benf.cfr.reader.entities.ClassFile.analyseMid(ClassFile.java:1001)
+         * org.benf.cfr.reader.entities.ClassFile.analyseTop(ClassFile.java:888)
+         * org.benf.cfr.reader.Driver.doClass(Driver.java:82)
+         * org.benf.cfr.reader.CfrDriverImpl.analyse(CfrDriverImpl.java:67)
+         * org.benf.cfr.reader.Main.main(Main.java:49)
+         */
+        throw new IllegalStateException(Decompilation failed);
+    }
+
+    /*
+     * Exception decompiling
+     */
+    public 0() {
+        /*
+         * This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file.
+         * java.lang.IllegalStateException: Dynamic invoke arg count mismatch 0(+3) vs 1
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeBootstrapArgs(Op02WithProcessedDataAndRefs.java:637)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeDynamic(Op02WithProcessedDataAndRefs.java:408)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeDynamic(Op02WithProcessedDataAndRefs.java:389)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.createStatement(Op02WithProcessedDataAndRefs.java:1221)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.access$100(Op02WithProcessedDataAndRefs.java:56)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs$11.call(Op02WithProcessedDataAndRefs.java:2068)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs$11.call(Op02WithProcessedDataAndRefs.java:2065)
+         * org.benf.cfr.reader.util.graph.AbstractGraphVisitorFI.process(AbstractGraphVisitorFI.java:60)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.convertToOp03List(Op02WithProcessedDataAndRefs.java:2077)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisInner(CodeAnalyser.java:425)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisOrWrapFail(CodeAnalyser.java:251)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysis(CodeAnalyser.java:185)
+         * org.benf.cfr.reader.entities.attributes.AttributeCode.analyse(AttributeCode.java:94)
+         * org.benf.cfr.reader.entities.Method.analyse(Method.java:463)
+         * org.benf.cfr.reader.entities.ClassFile.analyseMid(ClassFile.java:1001)
+         * org.benf.cfr.reader.entities.ClassFile.analyseTop(ClassFile.java:888)
+         * org.benf.cfr.reader.Driver.doClass(Driver.java:82)
+         * org.benf.cfr.reader.CfrDriverImpl.analyse(CfrDriverImpl.java:67)
+         * org.benf.cfr.reader.Main.main(Main.java:49)
+         */
+        throw new IllegalStateException(Decompilation failed);
+    }
+
+    /*
+     * Exception decompiling
+     */
+    public static {
+        /*
+         * This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file.
+         * java.lang.IllegalStateException: Dynamic invoke arg count mismatch 0(+3) vs 1
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeBootstrapArgs(Op02WithProcessedDataAndRefs.java:637)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeDynamic(Op02WithProcessedDataAndRefs.java:408)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.buildInvokeDynamic(Op02WithProcessedDataAndRefs.java:389)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.createStatement(Op02WithProcessedDataAndRefs.java:1221)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.access$100(Op02WithProcessedDataAndRefs.java:56)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs$11.call(Op02WithProcessedDataAndRefs.java:2068)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs$11.call(Op02WithProcessedDataAndRefs.java:2065)
+         * org.benf.cfr.reader.util.graph.AbstractGraphVisitorFI.process(AbstractGraphVisitorFI.java:60)
+         * org.benf.cfr.reader.bytecode.analysis.opgraph.Op02WithProcessedDataAndRefs.convertToOp03List(Op02WithProcessedDataAndRefs.java:2077)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisInner(CodeAnalyser.java:425)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisOrWrapFail(CodeAnalyser.java:251)
+         * org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysis(CodeAnalyser.java:185)
+         * org.benf.cfr.reader.entities.attributes.AttributeCode.analyse(AttributeCode.java:94)
+         * org.benf.cfr.reader.entities.Method.analyse(Method.java:463)
+         * org.benf.cfr.reader.entities.ClassFile.analyseMid(ClassFile.java:1001)
+         * org.benf.cfr.reader.entities.ClassFile.analyseTop(ClassFile.java:888)
+         * org.benf.cfr.reader.Driver.doClass(Driver.java:82)
+         * org.benf.cfr.reader.CfrDriverImpl.analyse(CfrDriverImpl.java:67)
+         * org.benf.cfr.reader.Main.main(Main.java:49)
+         */
+        throw new IllegalStateException(Decompilation failed);
+    }
+}</code></pre>
+					<!-- JD-GUI -->
+					<pre><code class="language-none">// INTERNAL ERROR //</code></pre>
+					<!-- BCEL -->
+					<pre><code class="language-java">org.apache.bcel.classfile.ClassFormatException: Constant pool at index 0 is null.
+    at org.apache.bcel.classfile.ConstantPool.getConstant(ConstantPool.java:258)
+    at org.apache.bcel.classfile.Attribute.readAttribute(Attribute.java:110)
+    at org.apache.bcel.classfile.Attribute.readAttribute(Attribute.java:218)
+    at org.apache.bcel.classfile.ClassParser.readAttributes(ClassParser.java:205)
+    at org.apache.bcel.classfile.ClassParser.parse(ClassParser.java:154)</code></pre>
+				</div>
+			</carousel>
+		</div>
+		
+		
+		
+		<!-- Flow Obfuscation -->
+		
+		
+		
+		<div class="carousel-container">
+			See how your applications flow will be obfuscated:
+			<carousel>
+				<div class="carousel-btns">
+					<button class="active">Original</button>
+					<button>Luyten/Procyon</button>
+					<button>Fernflower</button>
+					<button>Krakatau</button>
+					<button>CFR</button>
+				</div>
+				<div class="carousel-items">
+					<!-- Original -->
+					<pre class="active"><code class="language-java">public class FizzBuzz
+{
+	public FizzBuzz() {
+		super();
+	}
+	
+	public static void main(final String[] array) {
+		for (int i = 1; i <= 100; ++i) {
+			if (i % 15 == 0) {
+				System.out.println("FizzBuzz");
+			}
+			else if (i % 3 == 0) {
+				System.out.println("Fizz");
+			}
+			else if (i % 5 == 0) {
+				System.out.println("Buzz");
+			}
+			else {
+				System.out.println(String.valueOf(i));
+			}
+		}
+	}
+}</code></pre>
+					<!-- Luyten/Procyon -->
+					<pre><code class="language-java">public class FizzBuzz
+{
+    public static void main(final String[] p0) {
+        //
+        // This method could not be decompiled.
+        //
+        // The error that occurred was:
+        //
+        // java.lang.IndexOutOfBoundsException: Index: 440, Size: 440
+        //     at java.util.ArrayList.rangeCheck(Unknown Source)
+        //     at java.util.ArrayList.get(Unknown Source)
+        //     at com.strobel.decompiler.ast.AstBuilder.convertToAst(AstBuilder.java:3321)
+        //     at com.strobel.decompiler.ast.AstBuilder.convertToAst(AstBuilder.java:3569)
+        //     at com.strobel.decompiler.ast.AstBuilder.convertToAst(AstBuilder.java:3435)
+        //     at com.strobel.decompiler.ast.AstBuilder.convertToAst(AstBuilder.java:3435)
+        //     at com.strobel.decompiler.ast.AstBuilder.convertToAst(AstBuilder.java:3435)
+        //     at com.strobel.decompiler.ast.AstBuilder.build(AstBuilder.java:113)
+        //     at com.strobel.decompiler.languages.java.ast.AstMethodBodyBuilder.createMethodBody(AstMethodBodyBuilder.java:211)
+        //     at com.strobel.decompiler.languages.java.ast.AstMethodBodyBuilder.createMethodBody(AstMethodBodyBuilder.java:99)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createMethodBody(AstBuilder.java:782)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createMethod(AstBuilder.java:675)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.addTypeMembers(AstBuilder.java:552)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createTypeCore(AstBuilder.java:519)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createTypeNoCache(AstBuilder.java:161)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createType(AstBuilder.java:150)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.addType(AstBuilder.java:125)
+        //     at com.strobel.decompiler.languages.java.JavaLanguage.buildAst(JavaLanguage.java:71)
+        //     at com.strobel.decompiler.languages.java.JavaLanguage.decompileType(JavaLanguage.java:59)
+        //     at me.grax.jbytemod.decompiler.ProcyonDecompiler.decompile(ProcyonDecompiler.java:62)
+        //     at me.grax.jbytemod.decompiler.Decompiler.decompile(Decompiler.java:59)
+        //     at me.grax.jbytemod.decompiler.Decompiler.run(Decompiler.java:44)
+        //
+        throw new IllegalStateException("An error occurred while decompiling this method.");
+    }
+    
+    static {
+        throw t;
+    }
+    
+    public FizzBuzz() {
+        while (true) {
+            int n = 0;
+            Label_0025: {
+                if (c.1 >= 0) {
+                    n = ((int)(-519761066L) ^ 0xEC9513DF);
+                    break Label_0025;
+                }
+                n = ((int)2026488976L ^ 0xB5B25FFC);
+            }
+            switch (n ^ ((int)(-532353090L) ^ 0x47914B32)) {
+                case -1209222393: {
+                    continue;
+                }
+                default: {
+                    while (true) {
+                        int n2 = 0;
+                        Label_0086: {
+                            if (c.1 >= 0) {
+                                n2 = ((int)(-274111610L) ^ 0x2EE51E4F);
+                                break Label_0086;
+                            }
+                            n2 = ((int)1953405883L ^ 0x57356CD1);
+                        }
+                        switch (n2 ^ ((int)373455430L ^ 0x82ECC8D3)) {
+                            case 1440927580: {
+                                continue;
+                            }
+                            case -1208662529: {
+                                return;
+                            }
+                            default: {
+                                throw null;
+                            }
+                        }
+                        break;
+                    }
+                    break;
+                }
+                case -1438276603: {
+                    throw null;
+                }
+            }
+            break;
+        }
+    }
+}</code></pre>
+					<!-- Fernflower -->
+					<pre><code class="language-java">public class FizzBuzz {
+   public static void main(String[] param0) {
+      // $FF: Couldn't be decompiled
+   }
+
+   static {
+      throw var0;
+   }
+
+   public FizzBuzz() {
+      int var10000 = c.1 >= 0 ? (int)-519761066L ^ -325774369 : (int)2026488976L ^ -1246601220;
+
+      while(true) {
+         switch(var10000 ^ (int)-532353090L ^ 1200704306) {
+         case -1438276603:
+            throw null;
+         case -1209222393:
+            var10000 = (int)2026488976L ^ -1246601220;
+            break;
+         default:
+            int var10001 = c.1 >= 0 ? (int)-274111610L ^ 786767439 : (int)1953405883L ^ 1463119057;
+
+            while(true) {
+               switch(var10001 ^ (int)373455430L ^ -2098411309) {
+               case -1208662529:
+                  super();
+                  return;
+               case 1440927580:
+                  var10001 = (int)1953405883L ^ 1463119057;
+                  break;
+               default:
+                  throw null;
+               }
+            }
+         }
+      }
+   }
+}</code></pre>
+					<!-- Krakatau -->
+					<pre><code class="language-java">public class FizzBuzz {
+    public static void main(String[] a) {
+        if (c.1 < 0) {
+            RuntimeException a0 = null;
+            while(a0 != null) {
+                try {
+                    throw a0;
+                } catch(ArithmeticException a1) {
+                    a0 = a1;
+                }
+            }
+        }
+        int i = (int)927056282L ^ 927056283;
+        int i0 = c.c;
+        label56: {
+            label55: {
+                label57: {
+                    if (i0 <= 0) {
+                        break label57;
+                    }
+                    switch((int)(-1504107424L) ^ -1334319597 ^ (int)268507017L ^ 934889087) {
+                        default: {
+                            break label56;
+                        }
+                        case 831805892: {
+                            break;
+                        }
+                        case 831951749: {
+                            break label55;
+                        }
+                    }
+                }
+                while(true) {
+                    switch((int)(-1792250214L) ^ -323419657 ^ (int)268507017L ^ 934889087) {
+                        default: {
+                            break label56;
+                        }
+                        case 831805892: {
+                            break;
+                        }
+                        case 831951749: {
+                            break label55;
+                        }
+                    }
+                }
+            }
+            throw null;
+        }
+        while(true) {
+            int i1 = c.c;
+            label53: {
+                label52: {
+                    label54: {
+                        if (i1 <= 0) {
+                            break label54;
+                        }
+                        switch((int)1149553388L ^ 1351933849 ^ (int)(-2009393908L) ^ 1891082503) {
+                            default: {
+                                break label53;
+                            }
+                            case -325279362: {
+                                break label52;
+                            }
+                            case 1832646447: {
+                            }
+                        }
+                    }
+                    while(true) {
+                        switch((int)(-228379733L) ^ 33847913 ^ (int)(-2009393908L) ^ 1891082503) {
+                            default: {
+                                break label53;
+                            }
+                            case -325279362: {
+                                break label52;
+                            }
+                            case 1832646447: {
+                            }
+                        }
+                    }
+                }
+                throw null;
+            }
+            int i2 = (int)(-399108804L) ^ -399108776;
+            label50: {
+                label49: {
+                    label51: {
+                        if (i <= i2) {
+                            break label51;
+                        }
+                        switch((int)(-74816379L) ^ 1821444241 ^ (int)(-1545076643L) ^ -161522587) {
+                            default: {
+                                break;
+                            }
+                            case -1028902869: {
+                                break label50;
+                            }
+                            case -1028902868: {
+                                break label49;
+                            }
+                        }
+                    }
+                    while(true) {
+                        switch((int)(-1874512099L) ^ 123624206 ^ (int)(-1545076643L) ^ -161522587) {
+                            default: {
+                                break;
+                            }
+                            case -1028902869: {
+                                break label50;
+                            }
+                            case -1028902868: {
+                                break label49;
+                            }
+                        }
+                    }
+                }
+                return;
+            }
+            int i3 = c.c;
+            label47: {
+                label46: {
+                    label48: {
+                        if (i3 <= 0) {
+                            break label48;
+                        }
+                        switch((int)(-253470502L) ^ -1991953420 ^ (int)(-983158182L) ^ -24174019) {
+                            default: {
+                                break label47;
+                            }
+                            case 199720670: {
+                                break;
+                            }
+                            case 1112046409: {
+                                break label46;
+                            }
+                        }
+                    }
+                    while(true) {
+                        switch((int)(-114315073L) ^ 499171694 ^ (int)(-983158182L) ^ -24174019) {
+                            default: {
+                                break label47;
+                            }
+                            case 199720670: {
+                                break;
+                            }
+                            case 1112046409: {
+                                break label46;
+                            }
+                        }
+                    }
+                }
+                throw null;
+            }
+            int i4 = i % ((int)(-1536070750L) ^ -1536070739);
+            label38: {
+                label40: {
+                    label26: {
+                        label28: {
+                            label23: {
+                                label13: {
+                                    label15: {
+                                        label21: {
+                                            label43: {
+                                                label44: {
+                                                    label45: {
+                                                        if (i4 == 0) {
+                                                            break label45;
+                                                        }
+                                                        switch((int)(-1883226470L) ^ -1803375166 ^ (int)508713440L ^ 1928653762) {
+                                                            default: {
+                                                                break;
+                                                            }
+                                                            case 2011439481: {
+                                                                break label44;
+                                                            }
+                                                            case 2011439482: {
+                                                                break label43;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)2114743529L ^ 1699676082 ^ (int)508713440L ^ 1928653762) {
+                                                            default: {
+                                                                break;
+                                                            }
+                                                            case 2011439481: {
+                                                                break label44;
+                                                            }
+                                                            case 2011439482: {
+                                                                break label43;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                int i5 = c.c;
+                                                label41: {
+                                                    label42: {
+                                                        if (i5 <= 0) {
+                                                            break label42;
+                                                        }
+                                                        switch((int)(-1547178538L) ^ 155760983 ^ (int)1684331455L ^ 1730789540) {
+                                                            default: {
+                                                                break label41;
+                                                            }
+                                                            case -1446883430: {
+                                                                break label40;
+                                                            }
+                                                            case 872923673: {
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-1637043234L) ^ -464742113 ^ (int)1684331455L ^ 1730789540) {
+                                                            default: {
+                                                                break label41;
+                                                            }
+                                                            case -1446883430: {
+                                                                break label40;
+                                                            }
+                                                            case 872923673: {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                java.io.PrintStream a2 = System.out;
+                                                int i6 = c.c;
+                                                label37: {
+                                                    label39: {
+                                                        if (i6 <= 0) {
+                                                            break label39;
+                                                        }
+                                                        switch((int)(-1749529770L) ^ 276816278 ^ (int)2134864857L ^ 1121444381) {
+                                                            default: {
+                                                                break label38;
+                                                            }
+                                                            case -1171309820: {
+                                                                break;
+                                                            }
+                                                            case 1742804431: {
+                                                                break label37;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)1354822242L ^ 180975209 ^ (int)2134864857L ^ 1121444381) {
+                                                            default: {
+                                                                break label38;
+                                                            }
+                                                            case -1171309820: {
+                                                                break;
+                                                            }
+                                                            case 1742804431: {
+                                                                break label37;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                a2.println("FizzBuzz");
+                                                break label21;
+                                            }
+                                            int i7 = c.0;
+                                            label35: {
+                                                label34: {
+                                                    label36: {
+                                                        if (i7 <= 0) {
+                                                            break label36;
+                                                        }
+                                                        switch((int)(-39426251L) ^ 839489541 ^ (int)1437681435L ^ 883514024) {
+                                                            default: {
+                                                                break label35;
+                                                            }
+                                                            case -1363680637: {
+                                                                break label34;
+                                                            }
+                                                            case -1095886206: {
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)1392895913L ^ -850718731 ^ (int)1437681435L ^ 883514024) {
+                                                            default: {
+                                                                break label35;
+                                                            }
+                                                            case -1363680637: {
+                                                                break label34;
+                                                            }
+                                                            case -1095886206: {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                throw null;
+                                            }
+                                            int i8 = i % ((int)(-101788371L) ^ -101788370);
+                                            label31: {
+                                                label32: {
+                                                    label33: {
+                                                        if (i8 == 0) {
+                                                            break label33;
+                                                        }
+                                                        switch((int)(-1919733032L) ^ -1474090185 ^ (int)50204491L ^ -809180233) {
+                                                            default: {
+                                                                break;
+                                                            }
+                                                            case -393546478: {
+                                                                break label32;
+                                                            }
+                                                            case -393546477: {
+                                                                break label31;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-920077272L) ^ -325540410 ^ (int)50204491L ^ -809180233) {
+                                                            default: {
+                                                                break;
+                                                            }
+                                                            case -393546478: {
+                                                                break label32;
+                                                            }
+                                                            case -393546477: {
+                                                                break label31;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                int i9 = c.c;
+                                                label29: {
+                                                    label30: {
+                                                        if (i9 <= 0) {
+                                                            break label30;
+                                                        }
+                                                        switch((int)1036601759L ^ -179227287 ^ (int)2078063783L ^ -1745302417) {
+                                                            default: {
+                                                                break label29;
+                                                            }
+                                                            case -237277475: {
+                                                                break;
+                                                            }
+                                                            case 616303678: {
+                                                                break label28;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-43258047L) ^ 493252459 ^ (int)2078063783L ^ -1745302417) {
+                                                            default: {
+                                                                break label29;
+                                                            }
+                                                            case -237277475: {
+                                                                break;
+                                                            }
+                                                            case 616303678: {
+                                                                break label28;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                java.io.PrintStream a3 = System.out;
+                                                int i10 = c.1;
+                                                label25: {
+                                                    label27: {
+                                                        if (i10 < 0) {
+                                                            break label27;
+                                                        }
+                                                        switch((int)1206526476L ^ 301574872 ^ (int)772233798L ^ -608975087) {
+                                                            default: {
+                                                                break label26;
+                                                            }
+                                                            case -1549331069: {
+                                                                break;
+                                                            }
+                                                            case 174341895: {
+                                                                break label25;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)543042983L ^ -544305161 ^ (int)772233798L ^ -608975087) {
+                                                            default: {
+                                                                break label26;
+                                                            }
+                                                            case -1549331069: {
+                                                                break;
+                                                            }
+                                                            case 174341895: {
+                                                                break label25;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                a3.println("Fizz");
+                                                break label21;
+                                            }
+                                            int i11 = c.1;
+                                            label22: {
+                                                label24: {
+                                                    if (i11 < 0) {
+                                                        break label24;
+                                                    }
+                                                    switch((int)907258973L ^ 1721396108 ^ (int)4154552L ^ 1268028561) {
+                                                        default: {
+                                                            break label23;
+                                                        }
+                                                        case 455227384: {
+                                                            break;
+                                                        }
+                                                        case 1557666359: {
+                                                            break label22;
+                                                        }
+                                                    }
+                                                }
+                                                while(true) {
+                                                    switch((int)(-674476710L) ^ -1061181628 ^ (int)4154552L ^ 1268028561) {
+                                                        default: {
+                                                            break label23;
+                                                        }
+                                                        case 455227384: {
+                                                            break;
+                                                        }
+                                                        case 1557666359: {
+                                                            break label22;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            int i12 = i % ((int)(-423050004L) ^ -423050007);
+                                            label18: {
+                                                label19: {
+                                                    label20: {
+                                                        if (i12 == 0) {
+                                                            break label20;
+                                                        }
+                                                        switch((int)798219033L ^ -331583827 ^ (int)555650713L ^ -1642389078) {
+                                                            default: {
+                                                                break;
+                                                            }
+                                                            case 2091522694: {
+                                                                break label19;
+                                                            }
+                                                            case 2091522695: {
+                                                                break label18;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-1944083261L) ^ 1336938870 ^ (int)555650713L ^ -1642389078) {
+                                                            default: {
+                                                                break;
+                                                            }
+                                                            case 2091522694: {
+                                                                break label19;
+                                                            }
+                                                            case 2091522695: {
+                                                                break label18;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                int i13 = c.0;
+                                                label16: {
+                                                    label17: {
+                                                        if (i13 <= 0) {
+                                                            break label17;
+                                                        }
+                                                        switch((int)922207075L ^ -472951278 ^ (int)(-662840485L) ^ 1115906909) {
+                                                            default: {
+                                                                break label16;
+                                                            }
+                                                            case -2138609766: {
+                                                                break;
+                                                            }
+                                                            case 1338387831: {
+                                                                break label15;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-612481333L) ^ -46027964 ^ (int)(-662840485L) ^ 1115906909) {
+                                                            default: {
+                                                                break label16;
+                                                            }
+                                                            case -2138609766: {
+                                                                break;
+                                                            }
+                                                            case 1338387831: {
+                                                                break label15;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                java.io.PrintStream a4 = System.out;
+                                                int i14 = c.c;
+                                                label12: {
+                                                    label14: {
+                                                        if (i14 <= 0) {
+                                                            break label14;
+                                                        }
+                                                        switch((int)1921746765L ^ 645191238 ^ (int)1283900058L ^ 1181778822) {
+                                                            default: {
+                                                                break label13;
+                                                            }
+                                                            case 198662448: {
+                                                                break label12;
+                                                            }
+                                                            case 1577652247: {
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-1775734873L) ^ -1760987253 ^ (int)1283900058L ^ 1181778822) {
+                                                            default: {
+                                                                break label13;
+                                                            }
+                                                            case 198662448: {
+                                                                break label12;
+                                                            }
+                                                            case 1577652247: {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                a4.println("Buzz");
+                                                break label21;
+                                            }
+                                            int i15 = c.c;
+                                            label10: {
+                                                label9: {
+                                                    label11: {
+                                                        if (i15 <= 0) {
+                                                            break label11;
+                                                        }
+                                                        switch((int)(-1767274604L) ^ -1303367650 ^ (int)776606166L ^ -396243656) {
+                                                            default: {
+                                                                break label10;
+                                                            }
+                                                            case -489526428: {
+                                                                break label9;
+                                                            }
+                                                            case 650590954: {
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)212397048L ^ 1783554279 ^ (int)776606166L ^ -396243656) {
+                                                            default: {
+                                                                break label10;
+                                                            }
+                                                            case -489526428: {
+                                                                break label9;
+                                                            }
+                                                            case 650590954: {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                throw null;
+                                            }
+                                            java.io.PrintStream a5 = System.out;
+                                            int i16 = c.c;
+                                            label7: {
+                                                label6: {
+                                                    label8: {
+                                                        if (i16 <= 0) {
+                                                            break label8;
+                                                        }
+                                                        switch((int)941880140L ^ -1708465103 ^ (int)(-1151725134L) ^ -616829259) {
+                                                            default: {
+                                                                break label7;
+                                                            }
+                                                            case -1033312134: {
+                                                                break label6;
+                                                            }
+                                                            case -76535054: {
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-2004286L) ^ -117044529 ^ (int)(-1151725134L) ^ -616829259) {
+                                                            default: {
+                                                                break label7;
+                                                            }
+                                                            case -1033312134: {
+                                                                break label6;
+                                                            }
+                                                            case -76535054: {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                throw null;
+                                            }
+                                            int i17 = c.0;
+                                            label4: {
+                                                label3: {
+                                                    label5: {
+                                                        if (i17 <= 0) {
+                                                            break label5;
+                                                        }
+                                                        switch((int)1852355282L ^ 1920994018 ^ (int)657192929L ^ 59983576) {
+                                                            default: {
+                                                                break label4;
+                                                            }
+                                                            case 82678617: {
+                                                                break;
+                                                            }
+                                                            case 944769289: {
+                                                                break label3;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)(-442132431L) ^ 2138121880 ^ (int)657192929L ^ 59983576) {
+                                                            default: {
+                                                                break label4;
+                                                            }
+                                                            case 82678617: {
+                                                                break;
+                                                            }
+                                                            case 944769289: {
+                                                                break label3;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                throw null;
+                                            }
+                                            String s = String.valueOf(i);
+                                            int i18 = c.0;
+                                            label1: {
+                                                label0: {
+                                                    label2: {
+                                                        if (i18 <= 0) {
+                                                            break label2;
+                                                        }
+                                                        switch((int)(-1710096198L) ^ 385239 ^ (int)744184421L ^ -489761044) {
+                                                            default: {
+                                                                break label1;
+                                                            }
+                                                            case 732113610: {
+                                                                break;
+                                                            }
+                                                            case 1417833700: {
+                                                                break label0;
+                                                            }
+                                                        }
+                                                    }
+                                                    while(true) {
+                                                        switch((int)103957695L ^ -2126991611 ^ (int)744184421L ^ -489761044) {
+                                                            default: {
+                                                                break label1;
+                                                            }
+                                                            case 732113610: {
+                                                                break;
+                                                            }
+                                                            case 1417833700: {
+                                                                break label0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                throw null;
+                                            }
+                                            a5.println(s);
+                                        }
+                                        i = i + 1;
+                                        continue;
+                                    }
+                                    throw null;
+                                }
+                                throw null;
+                            }
+                            throw null;
+                        }
+                        throw null;
+                    }
+                    throw null;
+                }
+                throw null;
+            }
+            throw null;
+        }
+    }
+    
+    static {
+        throw a;
+    }
+    
+    public FizzBuzz() {
+        int i = c.1;
+        label4: {
+            label3: {
+                label5: {
+                    if (i < 0) {
+                        break label5;
+                    }
+                    switch((int)(-519761066L) ^ -325774369 ^ (int)(-532353090L) ^ 1200704306) {
+                        default: {
+                            break label4;
+                        }
+                        case -1438276603: {
+                            break label3;
+                        }
+                        case -1209222393: {
+                        }
+                    }
+                }
+                while(true) {
+                    switch((int)2026488976L ^ -1246601220 ^ (int)(-532353090L) ^ 1200704306) {
+                        default: {
+                            break label4;
+                        }
+                        case -1438276603: {
+                            break label3;
+                        }
+                        case -1209222393: {
+                        }
+                    }
+                }
+            }
+            throw null;
+        }
+        int i0 = c.1;
+        label0: {
+            label1: {
+                label2: {
+                    if (i0 < 0) {
+                        break label2;
+                    }
+                    switch((int)(-274111610L) ^ 786767439 ^ (int)373455430L ^ -2098411309) {
+                        default: {
+                            break label1;
+                        }
+                        case -1208662529: {
+                            break label0;
+                        }
+                        case 1440927580: {
+                        }
+                    }
+                }
+                while(true) {
+                    switch((int)1953405883L ^ 1463119057 ^ (int)373455430L ^ -2098411309) {
+                        default: {
+                            break label1;
+                        }
+                        case -1208662529: {
+                            break label0;
+                        }
+                        case 1440927580: {
+                        }
+                    }
+                }
+            }
+            throw null;
+        }
+        super();
+    }
+}</code></pre>
+					<!-- CFR -->
+					<pre><code class="language-java">public class FizzBuzz {
+    /*
+     * Exception decompiling
+     */
+    public static void main(String[] var0) {
+        // This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file.
+        // org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous
+        // org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.SwitchReplacer.examineSwitchContiguity(SwitchReplacer.java:478)
+        // org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.SwitchReplacer.replaceRawSwitches(SwitchReplacer.java:61)
+        // org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisInner(CodeAnalyser.java:380)
+        // org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisOrWrapFail(CodeAnalyser.java:188)
+        // org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysis(CodeAnalyser.java:133)
+        // org.benf.cfr.reader.entities.attributes.AttributeCode.analyse(AttributeCode.java:96)
+        // org.benf.cfr.reader.entities.Method.analyse(Method.java:397)
+        // org.benf.cfr.reader.entities.ClassFile.analyseMid(ClassFile.java:906)
+        // org.benf.cfr.reader.entities.ClassFile.analyseTop(ClassFile.java:797)
+        // org.benf.cfr.reader.Driver.doClass(Driver.java:58)
+        // org.benf.cfr.reader.Main.doClass(Main.java:17)
+        // org.benf.cfr.reader.PluginRunner.getDecompilationFor(PluginRunner.java:108)
+        // me.grax.jbytemod.decompiler.CFRDecompiler.decompile(CFRDecompiler.java:154)
+        // me.grax.jbytemod.decompiler.Decompiler.decompile(Decompiler.java:59)
+        // me.grax.jbytemod.decompiler.Decompiler.run(Decompiler.java:44)
+        throw new IllegalStateException("Decompilation failed");
+    }
+
+    public static {
+        throw throwable;
+    }
+
+    /*
+     * Unable to fully structure code
+     */
+    public FizzBuzz() {
+        block10 : {
+            if (c.1 < 0) break block10;
+            v0 = (int)-519761066L ^ -325774369;
+            ** GOTO lbl7
+        }
+        block8 : do {
+            v0 = (int)2026488976L ^ -1246601220;
+lbl7: // 2 sources:
+            switch (v0 ^ ((int)-532353090L ^ 1200704306)) {
+                case -1209222393: {
+                    continue block8;
+                }
+                default: {
+                    if (c.1 < 0) ** GOTO lbl14
+                    v1 = (int)-274111610L ^ 786767439;
+                    ** GOTO lbl16
+lbl14: // 1 sources:
+                    block9 : do {
+                        v1 = (int)1953405883L ^ 1463119057;
+lbl16: // 2 sources:
+                        switch (v1 ^ ((int)373455430L ^ -2098411309)) {
+                            case 1440927580: {
+                                continue block9;
+                            }
+                            case -1208662529: {
+                                super();
+                                return;
+                            }
+                        }
+                        break;
+                    } while (true);
+                    throw null;
+                }
+                case -1438276603:
+            }
+            break;
+        } while (true);
+        throw null;
+    }
+}</code></pre>
+				</div>
+			</carousel>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="buy-modal" product="1">
+	<div class="modal-content">
+		<span class="modal-close" modal="0">&times;</span>
+		<p id="buy-text">Some text in the Modal..</p>
+	</div>
+</div>
+
+<script src="/script/shared.js"></script>
+<script src="/script/modal.js"></script>
+<script src="/script/product.js"></script>
+<script src="/script/binscure.js"></script>
+<script src ="https://btcpaymerchant.com/modal/btcpay.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src="/resources/prism.js"></script>
+</body>
+</html>

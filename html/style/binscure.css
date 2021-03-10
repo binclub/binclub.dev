@@ -1,0 +1,88 @@
+div.carousel-container {
+}
+
+div.carousel-container > div {
+
+}
+
+carousel {
+	margin-top: 9px;
+	position: relative;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-rows: min-content min-content;
+	max-width: 90vw;
+	margin-bottom: 20px;
+}
+
+carousel > div.carousel-btns {
+	width: 100%;
+	display: grid;
+	grid-auto-flow: column;
+	max-width: 90vw;
+}
+
+carousel > div.carousel-btns > button {
+	background-color: #1e2022;
+	border: 1px solid white;
+	border-bottom: none;
+	color: inherit;
+	float: left;
+	padding: 10px;
+	cursor: pointer;
+}
+
+carousel > div.carousel-btns > button:not(.active) {
+	border-bottom: 1px solid white;
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	border-left: none;
+	border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+carousel > div.carousel-btns > button:not(.active):first-of-type {
+	border-top-left-radius: 5px;
+	border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+carousel > div.carousel-btns > button:not(.active):last-of-type {
+	border-top-right-radius: 5px;
+	border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+carousel > div.carousel-btns > button.active {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #2d2d2d;
+}
+
+/*carousel > div.carousel-btns > button:first-of-type {
+    border-bottom-left-radius: 5px;
+}
+
+carousel > div.carousel-btns > button:last-of-type {
+    border-bottom-right-radius: 5px;
+}*/
+
+carousel > div.carousel-items {
+	max-width: 90vw;
+}
+
+carousel > div.carousel-items > pre {
+	max-width: 100%;
+	border: 1px solid white;
+	border-top: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-size: smaller;
+}
+
+carousel > div.carousel-items > pre:not(.active) {
+	display: none;
+}
+
+pre:not(:empty) {
+	margin: 0 !important;
+	height: 400px;
+	overflow-y: visible;
+	overflow-x: auto;
+}

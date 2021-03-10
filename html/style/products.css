@@ -1,0 +1,75 @@
+html {
+	overflow-y: auto;
+}
+
+div#content > #content-header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+div#content > #content-header > div {
+	display: block !important;
+}
+
+div#content > #content-header > div:first-of-type {
+	text-align: left;
+}
+
+div#content > #content-header > div:last-of-type {
+	text-align: right;
+}
+
+div#content > #content-header > div > h1 {
+	margin-bottom: 0;
+}
+
+div#content > #content-header > div > small {
+	font-size: large;
+}
+
+div#content > #content-header > div > button {
+	border: 1px solid #efefef;
+	border-radius: 25px;
+	font-size: larger;
+	background: none;
+	color: inherit;
+	padding: 5px 20px;
+}
+
+div#content > div#features {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 10px 0 10px 0;
+}
+
+@media screen and (max-width: 1000px) {
+	div#content > div#features {
+		grid-template-columns: auto;
+	}
+}
+
+div#content > div#features > fieldset {
+	border: none;
+}
+
+div#content > div#features > fieldset > legend {
+	text-align: center;
+	background-color: inherit;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: 0 auto;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+
+div#content > div#features  > fieldset > p {
+	margin: 10px;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+div#content > div#features  > fieldset > p {
+	margin-left: 20px !important;
+	font-size: large;
+}

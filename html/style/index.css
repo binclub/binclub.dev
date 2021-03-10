@@ -1,0 +1,207 @@
+body > div#main > div#header > nav > picture > img {
+	width: 120px;
+	height: 120px;
+}
+
+body > div#main > div#content > div#about {
+	font-weight: bold;
+	margin: auto 0 auto 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about {
+		grid-template-columns: 1fr;
+		grid-template-rows: 25% max-content;
+	}
+}
+
+body > div#main > div#content > div#about > div#text {
+	font-weight: bold;
+	margin: auto 0 auto 0;
+	max-width: 500px;
+	display: grid;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#text {
+		max-width: 100%;
+		margin: auto 0 auto 0;
+	}
+}
+
+body > div#main > div#content > div#about > div#text > h1 {
+	cursor: default;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#text > h1 {
+		font-size: 4rem;
+	}
+}
+
+body > div#main > div#content > div#about > div#text > button {
+	background-color: #efefef;
+	border: none;
+	padding: 10px;
+	margin: auto;
+	cursor: pointer;
+}
+
+body > div#main > div#content > div#about > #img-container {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	padding-left: 10%;
+}
+
+body > div#main > div#content > div#about > div#popouts-container {
+	background-image: url("../resources/background.webp"), url("../resources/background.png");
+	height: 50%;
+	display: grid;
+	margin: auto 0 auto 0;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#popouts-container {
+		margin: 0;
+		height: auto;
+	}
+}
+
+body > div#main > div#content > div#about > div#popouts-container > div#popouts {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: auto 0 auto 0;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#popouts-container > div#popouts {
+		margin: 0;
+		display: block;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#popouts-container > div#popouts {
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content min-content;
+	}
+}
+
+body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout {
+	padding: 0 10px 0 10px;
+	max-width: 200px;
+	margin: auto;
+	height: 100%;
+	/*background-color: #2b2b2b;*/
+	background-color: #1e2022;
+	background-image: none;
+	border-radius: 3px;
+	border: 1px solid #efefef !important;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout {
+		margin: auto;
+		height: inherit;
+		max-width: 75%;
+	}
+}
+
+body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout:first-of-type {
+	margin-right: 5%;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout:first-of-type {
+		margin: 100px auto 100px auto !important;
+	}
+}
+
+body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout:last-of-type {
+	margin-left: 5%;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout:last-of-type {
+		margin: 100px auto 100px auto !important;
+	}
+}
+
+body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout > legend:first-of-type {
+	text-align: left;
+	background-color: inherit;
+	padding-top: 0;
+	padding-bottom: 0;
+	border: 1px solid #efefef;
+	border-bottom-style: none;
+	
+	border-image: linear-gradient(to bottom, #efefef 50%, rgba(0, 0, 0, 0) 50%);
+	border-image-slice: 1;
+	border-radius: 3px;
+}
+
+body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout > legend:nth-of-type(2) {
+	float: right;
+	text-align: right;
+	
+	bottom: 0;
+	left: 50%;
+	transform: translateY(50%);
+	padding: 0 5px;
+	color: #1e2022;
+	background-color: #efefef;
+}
+
+body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout > p {
+	font-size: 15px;
+	font-weight: normal;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#content > div#about > div#popouts-container > div#popouts > fieldset.popout > p {
+		font-size: 2.5rem;
+	}
+}
+
+.aside {
+	display: block;
+	position: relative;
+	margin: 40px 0;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all .1s ease-in-out;
+}
+
+.aside:hover {
+	transform: scale(1.1);
+}
+
+.aside > legend {
+	font-size: 17px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 5px 10px;
+	line-height: 24px;
+}
+
+@media screen and (max-width: 1000px) {
+	.aside > legend {
+		font-size: 2.6rem;
+		padding: 20px;
+		padding-bottom: 10px !important;
+		padding-top: 20px !important;
+		border-width: 2px !important;
+	}
+	
+	.aside:hover {
+		transform: scale(1);
+	}
+}
+
+.aside > p {
+	margin: 10px;
+}

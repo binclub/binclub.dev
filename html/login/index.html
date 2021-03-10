@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- HTML Meta Tags -->
+	<title>Binclub: Login</title>
+	<meta name="description" content="Binclub creates commercial obfuscators and reverse engineering tools">
+	<meta name="keywords" content="binclub binscure bingait obfuscate obfuscator java deobfuscator disassembler jvm kotlin security drm decompilation bytecode">
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=auto">
+	
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="Binclub: Login">
+	<meta itemprop="description" content="Binclub creates commercial obfuscators and reverse engineering tools">
+	<meta itemprop="image" content="http://binclub.dev/resources/icon.webp">
+	
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://binclub.dev/login">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Binclub: Login">
+	<meta property="og:description" content="Binclub creates commercial obfuscators and reverse engineering tools">
+	<meta property="og:image" content="http://binclub.dev/resources/icon.webp">
+	
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Binclub: Login">
+	<meta name="twitter:description" content="Binclub creates commercial obfuscators and reverse engineering tools">
+	<meta name="twitter:image" content="http://binclub.dev/resources/icon.webp">
+	
+	<link href="https://binclub.dev/login" rel="canonical">
+	<link href="/resources/icon.webp" rel="shortcut icon" type="image/x-icon">
+	<link href="/style/shared.css" rel="stylesheet" type="text/css">
+	<link href="/style/login.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="main">
+	<div id="header">
+		<nav>
+			<picture>
+				<source srcset="/resources/Binclub_2_75.webp" type="image/webp">
+				<source srcset="/resources/Binclub_2_75.png" type="image/png">
+				<img src="/resources/Binclub_2_75.png" alt="padlock" onclick="goto('/')" style="cursor: pointer">
+			</picture>
+			<ul>
+				<li><a href="/binscure/">Binscure</a></li>
+				<li><a href="/bingait">Bingait</a></li>
+				<li><a href="https://blog.binclub.dev" target="_blank">Blog</a></li>
+				<li><a href="/discord/" target="_blank">Discord</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="content">
+		<div id="login-box">
+			<h1>Login/Signup to your Binclub account</h1>
+			<p>
+				By joining binclub you can purchase licenses for Binscure and Bingait.<br>
+				You may only log in/register if you are over the age of 13.<br>
+				By logging in/registering you are agreeing to our <a href="/toc/">Terms and Conditions</a>.
+			</p>
+			<div class="status-area">
+			</div>
+			<form class="form-inputs" id="login-form" method="post" spellcheck="false">
+				<div class="form-input">
+					<label>Email</label>
+					<input id="email-input" name="email" onchange="updateBtns()" placeholder="email" required
+					       type="email">
+				</div>
+				<div class="form-input">
+					<label>Password</label>
+					<input id="password-input" name="password" onchange="updateBtns()" placeholder="password"
+					       required type="password">
+				</div>
+				<!--
+				<div class="form-input" style="display: none;">
+					<label>I agree to the <a href="/policy/">Privacy Policy and Terms and Conditions</a></label>
+					<div class="checkbox-container">
+						<input checked id="toc-input" name="toc-input" onchange="updateBtns()" required
+						       type="checkbox" value="true">
+						<span class="checkbox" id="toc-input-span"></span>
+					</div>
+				</div> -->
+				<div class="g-recaptcha"
+				     data-callback="postCaptcha"
+				     data-sitekey="6LcSo-EUAAAAAHm3CpnM1uf-8qhg__oBnoNDSgb-"
+				     data-size="invisible">
+				</div>
+				<div class="form-buttons">
+					<button id="login-btn" onclick="postLogin()" type="button">Login</button>
+					<button id="signup-btn" onclick="postSignup()" type="button">Signup</button>
+				</div>
+				<input id="redir-input" type="hidden" name="redir">
+			</form>
+		</div>
+	</div>
+</div>
+<script src="/script/shared.js"></script>
+<script src="/script/login.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script async defer src="https://www.google.com/recaptcha/api.js"></script>
+</body>
+</html>

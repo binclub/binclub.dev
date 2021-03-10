@@ -1,0 +1,6 @@
+<configuration>
+	<logger name="org.eclipse.jetty" level="WARN"/>
+	<logger name="io.netty" level="WARN"/>
+    <logger name="com.zaxxer.hikari" level="WARN"/>
+    <logger name="com.brsanthu.googleanalytics.httpclient.ApacheHttpClientImpl" leve="VERBOSE"/>
+</configuration>

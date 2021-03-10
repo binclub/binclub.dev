@@ -1,0 +1,181 @@
+body > div#main > div#content > div#login-box {
+	margin: auto;
+	height: 75%;
+}
+
+body > div#main > div#content > div#login-box > h1 {
+	cursor: default;
+}
+
+body > div#main > div#content > div#login-box > p {
+	cursor: default;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs {
+	margin: auto;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 12px;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > :first-child {
+	margin-right: 12px;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > :last-child {
+	margin-left: 12px;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > label {
+	margin: auto 0 auto 0;
+	font-family: inherit;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > input {
+	box-sizing: border-box;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > input[type=email], input[type=password], div.checkbox-container {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid white;
+	background-color: #1e2022;
+	color: inherit;
+	border-radius: 4px;
+	resize: vertical;
+	font-family: unset;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > input[type=email]:invalid, input[type=password]:invalid, div.checkbox-container {
+	border-color: #f98b57;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: #1e2022;
+	width: auto;
+	border: none;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > input[type=checkbox] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 25px;
+	width: 25px;
+	top: 0;
+	margin: 1px 0 0 1px;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container {
+	cursor: default;
+	margin-left: 0;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > span.checkbox {
+	position: absolute;
+	top: 0;
+	height: 25px;
+	width: 25px;
+	pointer-events: none;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > input[type=checkbox]:checked ~ span.checkbox {
+	left: 20px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid #efefef;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > input[type=checkbox]:checked ~ span.checkbox:before {
+	transform: rotate(-45deg) translateY(-10px);
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > input[type=checkbox] ~ span.checkbox:before {
+	content: "";
+	border: 1px solid #efefef;
+	transform: translateY(0px);
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	border-radius: 4px;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > input[type=checkbox]:not(:checked) ~ span.checkbox:before {
+	border-color: #f98b57;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > input[type=checkbox] ~ span.checkbox:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > div.checkbox-container > input[type=checkbox]:checked ~ span.checkbox:after {
+	display: block;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-input > input[type=email]::placeholder, input[type=password]::placeholder {
+	color: inherit;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-buttons > button {
+	box-sizing: border-box;
+	border: 1px solid white;
+	background-color: #1e2022;
+	color: inherit;
+	padding: 12px 20px;
+	margin: 12px;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+	font-family: unset;
+	transition: transform .1s ease-in-out;
+}
+
+body > div#main > div#content > div#login-box > form.form-inputs > div.form-buttons > button:hover {
+	transform: scale(1.1);
+}
+
+body > div#main > div#content > div#login-box > div.status-area {
+	display: none;
+}
+
+body > div#main > div#content > div#login-box > div.status-area > p {
+	margin: 0;
+}
+
+body > div#main > div#content > div#login-box > div.status-area.err, body > div#main > div#content > div#login-box > div.status-area.succ {
+	display: block;
+	border: 1px solid #f8f8f8;
+	padding: 12.5px;
+	border-radius: 4px;
+}
+
+body > div#main > div#content > div#login-box > div.status-area.err {
+	border-color: red;
+}
+
+body > div#main > div#content > div#login-box > div.status-area.succ {
+	border-color: green;
+}

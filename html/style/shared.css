@@ -1,0 +1,145 @@
+code {
+	background-color: rgba(220, 224, 228, 0.1);
+	padding: .2em .4em;
+	font-size: 75%;
+	border-radius: 3px;
+	font-family: Consolas, monospace;
+}
+
+html {
+	/*overflow: hidden;
+	-ms-overflow-style: none;*/  /* IE and Edge */
+	/*scrollbar-width: none;*/  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	
+	display: grid;
+	margin: 0 5vw 0 5vw;
+	
+	color: #efefef;
+	background-color: #1e2022;
+	
+	height: 100vh;
+}
+
+a {
+	color: #efefef;
+}
+
+@media screen and (max-width: 1000px) {
+	body {
+		font-size: xx-large;
+	}
+}
+
+*:focus {
+	outline: 0;
+}
+
+a:any-link {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+body > div#main {
+	display: grid;
+	grid-template-rows: fit-content(40%) 1fr;
+	max-width: 90vw;
+}
+
+body > div#main > div#header {
+	max-width: 90vw;
+}
+
+body > div#main > div#header > nav {
+	display: grid;
+	grid-template-columns: fit-content(100%) 1fr;
+	height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#header > nav {
+		grid-template-columns: 1fr;
+		grid-template-rows: fit-content(100%) fit-content(100%);
+	}
+}
+
+body > div#main > div#header > nav > div#h1-container {
+	margin: auto 0 auto 0;
+	cursor: pointer;
+}
+
+body > div#main > div#header > nav > div#h1-container > h1 {
+	height: 100%;
+	margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#header > nav > div#h1-container > h1 {
+		text-align: center;
+	}
+}
+
+body > div#main > div#header > nav > picture > img {
+	width: 75px;
+	height: 75px;
+	margin: auto;
+	transform: rotate(0deg);
+	padding: 5px 20px 5px 5px;
+	float: left;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#header > nav > picture {
+		display: none;
+	}
+}
+
+body > div#main > div#header > nav > ul {
+	list-style-type: none;
+	padding: 0;
+	margin: auto 0 auto auto;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+	body > div#main > div#header > nav > ul {
+		margin: auto auto auto auto;
+	}
+}
+
+body > div#main > div#header > nav > ul > li {
+	display: inline;
+	transition: all .1s ease-in-out;
+}
+
+body > div#main > div#header > nav > ul > li > a {
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+}
+
+body > div#main > div#header > nav > ul > li:hover {
+	transform: scale(1.1);
+}
+
+body > div#main > div#header > nav > ul > li:not(:hover) {
+	color: #d0d0d0;
+}
+
+body > div#main > div#content {
+	display: grid;
+	max-width: 90vw;
+}
+
+body > div#main > div#content > * {
+	max-width: 90vw;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- HTML Meta Tags -->
+	<title>Bingait</title>
+	<meta name="description" content="Bingait is a reverse engineering toolkit for Java Bytecode">
+	<meta name="keywords" content="binclub binscure bingait obfuscate obfuscator java deobfuscator disassembler jvm kotlin security drm decompilation bytecode">
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=auto">
+	
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="Bingait">
+	<meta itemprop="description" content="Bingait is a reverse engineering toolkit for Java Bytecode">
+	<meta itemprop="image" content="http://binclub.dev/resources/icon.webp">
+	
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://binclub.dev/bingait">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Bingait">
+	<meta property="og:description" content="Bingait is a reverse engineering toolkit for Java Bytecode">
+	<meta property="og:image" content="http://binclub.dev/resources/icon.webp">
+	
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Bingait">
+	<meta name="twitter:description" content="Bingait is a reverse engineering toolkit for Java Bytecode">
+	<meta name="twitter:image" content="http://binclub.dev/resources/icon.webp">
+	
+	<link href="https://binclub.dev/bingait" rel="canonical">
+	<link href="/resources/icon.webp" rel="shortcut icon" type="image/x-icon">
+	<link href="/style/shared.css" rel="stylesheet" type="text/css">
+	<link href="/style/products.css" rel="stylesheet" type="text/css">
+	<link href="/style/bingait.css" rel="stylesheet" type="text/css">
+	<link href="/style/modal.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="main">
+	<div id="header">
+		<nav>
+			<picture>
+				<source srcset="/resources/Binclub_2_75.webp" type="image/webp">
+				<source srcset="/resources/Binclub_2_75.png" type="image/png">
+				<img src="/resources/Binclub_2_75.png" alt="padlock" onclick="goto('/')" style="cursor: pointer">
+			</picture>
+			<ul>
+				<li><a href="/binscure">Binscure</a></li>
+				<li><a href="/bingait">Bingait</a></li>
+				<li><a href="https://blog.binclub.dev" target="_blank">Blog</a></li>
+				<li><a href="/discord" target="_blank">Discord</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="content">
+		<div id="content-header">
+			<div>
+				<h1>
+					BINGAIT
+				</h1>
+				<small>a reverse engineering tool for Java Bytecode</small>
+			</div>
+			<div>
+				<button id="purchase-btn" class="modal-open" modal="0">PURCHASE</button>
+			</div>
+		</div>
+		<div id="features">
+			<fieldset>
+				<legend>Analyse</legend>
+				<p>
+					Bingait provides you the tools you need to analyse compiled Java applications. Whether you are a bug
+					hunter, security researcher, or just hobbyist, bingait provides you with the tools you need. We provide
+					custom low level bytecode ASTs so you can see exactly what the program is doing, while also providing
+					integration with third party high level tools like Java decompilers.
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Modern</legend>
+				<p>
+					We provide a modern user interface that you will find easy to learn, and the high contrast colours on a
+					black background aid your eyes at night.
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Fast</legend>
+				<p>
+					Bingait is designed to be blazing fast through carefully implemented multithreading and concurrent
+					algorithms. Bingait can load the entire Java 8 runtime for analysis in under a second.
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Modular</legend>
+				<p>
+					Bingait provides an easy to use and modular plugin system.
+					Free access to plugins supporting features such as decompilation are provided.
+					It is easy for customers to develop their own plugins using the open source API.
+				</p>
+			</fieldset>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="buy-modal" product="2">
+	<div class="modal-content">
+		<span class="modal-close" modal="0">&times;</span>
+		<p id="buy-text">Some text in the Modal..</p>
+	</div>
+</div>
+
+<script src="/script/shared.js"></script>
+<script src="/script/modal.js"></script>
+<script src="/script/product.js"></script>
+<script src ="https://btcpaymerchant.com/modal/btcpay.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script async defer src="https://www.google.com/recaptcha/api.js"></script>
+</body>
+</html>
