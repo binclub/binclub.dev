@@ -58,7 +58,7 @@ body > div#main > div#content > div#about > #img-container {
 }
 
 body > div#main > div#content > div#about > div#popouts-container {
-	background-image: url("../resources/background.webp"), url("../resources/background.png");
+	background-image: url("../resources/background.webp");
 	height: 50%;
 	display: grid;
 	margin: auto 0 auto 0;
