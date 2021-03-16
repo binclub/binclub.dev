@@ -114,6 +114,12 @@ fun Application.module() {
 	}
 	install(Routing) {
 		// We should really be using nginx
+		host(Regex("i.binclub.dev")) {
+			static {
+				files("i")
+			}
+			notFoundEndpoint()
+		}
 		blogHost()
 		host(listOf("www.binclub.dev", "binclub.dev", "localhost")) {
 			staticEndPoints()
